@@ -1,0 +1,26 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.gaoyy.mishop.main.home.HomeFragment">
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/home_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:tabIndicatorColor="@color/rec_tab_selected_indicator_color"
+        app:tabSelectedTextColor="@color/rec_tab_selected_text_color"
+        app:tabTextColor="@color/rec_tab_unselected_text_color"/>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/home_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</LinearLayout>

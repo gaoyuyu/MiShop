@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/rec_list_sub_mz_layout"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/rec_list_normal_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_margin="2dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/rec_list_sub_good_img"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/rec_list_sub_good_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="小米手环 2"
+                android:textColor="@color/rec_item_good_name"
+                android:textSize="@dimen/good_name"/>
+
+            <TextView
+                android:id="@+id/rec_list_sub_good_descr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:padding="2dp"
+                android:singleLine="true"
+                android:text="全面屏2.0，5.99 大屏"
+                android:textColor="@color/rec_item_good_descr"
+                android:textSize="@dimen/good_descr"/>
+
+            <TextView
+                android:id="@+id/rec_list_sub_good_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="￥299"
+                android:textColor="@color/rec_item_good_price"
+                android:textSize="@dimen/good_price"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

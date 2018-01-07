@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="30dp">
+
+    <TextView
+        android:id="@+id/rec_list_sub_mz_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="车载空气净化器滤芯"
+        android:textColor="@color/rec_item_good_name"
+        android:textSize="@dimen/good_name"/>
+
+    <TextView
+        android:id="@+id/rec_list_sub_mz_descr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="初效滤网，强力吸附大颗粒悬浮物"
+        android:textColor="@color/rec_item_good_descr"
+        android:textSize="@dimen/good_descr"/>
+
+    <TextView
+        android:id="@+id/rec_list_sub_mz_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="200"
+        android:textColor="@color/rec_item_good_price"
+        android:textSize="@dimen/good_price"/>
+
+
+</LinearLayout>
+

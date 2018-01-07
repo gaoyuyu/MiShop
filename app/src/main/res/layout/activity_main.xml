@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    android:orientation="vertical"
+    tools:context="com.gaoyy.mishop.main.MainActivity">
+
+    <include
+        android:id="@+id/main_search_bar"
+        layout="@layout/widget_home_searchbar"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/main_tablayout"
+        android:layout_below="@+id/main_search_bar"/>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/main_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        app:tabGravity="fill"
+        app:tabIndicatorHeight="0dp"
+        app:tabSelectedTextColor="@color/home_tab_selected_text_color"
+        app:tabTextColor="@color/home_tab_unselected_text_color"/>
+
+
+</RelativeLayout>

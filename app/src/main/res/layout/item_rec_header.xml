@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/rec_header_banner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/rec_auto_viewpager_height"
+            app:banner_pageChangeDuration="1000"
+            app:banner_pointAutoPlayAble="true"
+            app:banner_pointContainerBackground="@android:color/transparent"
+            app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
+            app:banner_pointTopBottomMargin="5dp"
+            app:banner_indicatorGravity="right|bottom"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/rec_header_really_want"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/rec_label_image_height"
+                android:padding="5dp"
+                app:srcCompat="@mipmap/ic_really_want"/>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="真心想要"
+                android:textColor="@color/rec_main_text_color"
+                android:textSize="@dimen/rec_label_image_text_size"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rec_header_sim_deposit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/rec_label_image_height"
+                android:padding="5dp"
+                app:srcCompat="@mipmap/ic_sim_deposit"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="手机充值"
+                android:textColor="@color/rec_main_text_color"
+                android:textSize="@dimen/rec_label_image_text_size"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rec_header_mi_sim"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/rec_label_image_height"
+                android:padding="5dp"
+                app:srcCompat="@mipmap/ic_mi_sim"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="米粉卡"
+                android:textColor="@color/rec_main_text_color"
+                android:textSize="@dimen/rec_label_image_text_size"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rec_header_pick_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/rec_label_image_height"
+                android:padding="5dp"
+                app:srcCompat="@mipmap/ic_gift"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="挑选手机"
+                android:textColor="@color/rec_main_text_color"
+                android:textSize="@dimen/rec_label_image_text_size"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rec_header_new_prod"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/rec_label_image_height"
+                android:padding="5dp"
+                app:srcCompat="@mipmap/ic_new_prod"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新品发布"
+                android:textColor="@color/rec_main_text_color"
+                android:textSize="@dimen/rec_label_image_text_size"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divide_line_color"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="商城早报"
+            android:textColor="@color/rec_main_shop_paper_label_text_color"
+            android:textSize="@dimen/rec_paper_text_size"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:background="@color/divide_line_color"/>
+
+        <TextView
+            android:id="@+id/rec_header_news"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight="0.7"
+            android:ellipsize="end"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:text="精彩马上呈现"
+            android:textColor="@color/rec_main_shop_paper_text_color"
+            android:textSize="@dimen/rec_paper_text_size"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
