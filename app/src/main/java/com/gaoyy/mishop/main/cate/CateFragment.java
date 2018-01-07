@@ -3,9 +3,11 @@ package com.gaoyy.mishop.main.cate;
 
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.AbsListView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.gaoyy.mishop.R;
 import com.gaoyy.mishop.adapter.CateChildAdapter;
 import com.gaoyy.mishop.adapter.CateParentAdapter;
@@ -80,11 +82,19 @@ public class CateFragment extends BaseFragment implements CateContract.View
     }
 
     @Override
-    public void showCate(List<String> parentCates, List<CateInfo.DataBeanXX.GoodsBean> childCates)
+    public void showCate(List<String> parentCates, final List<CateInfo.DataBeanXX.GoodsBean> childCates)
     {
-        for (String cateName : parentCates)
+        for (int i = 0; i < parentCates.size(); i++)
         {
-            parentCateList.add(new ParentCate(0,cateName));
+            if (i == 0)
+            {
+                parentCateList.add(new ParentCate(1, parentCates.get(i)));
+            }
+            else
+            {
+                parentCateList.add(new ParentCate(0, parentCates.get(i)));
+            }
+
         }
         cateParentAdapter = new CateParentAdapter(parentCateList);
 
@@ -93,9 +103,46 @@ public class CateFragment extends BaseFragment implements CateContract.View
 
         cateParentRv.setAdapter(cateParentAdapter);
 
-        cateChildAdapter = new CateChildAdapter(activity,childCates);
+        cateChildAdapter = new CateChildAdapter(activity, childCates);
         cateChildLv.setAdapter(cateChildAdapter);
-        LinearSnapHelper mLinearSnapHelper = new LinearSnapHelper();
+
+        cateParentAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position)
+            {
+                int select = -1;
+                for(int i=0;i<childCates.size();i++)
+                {
+                    int index = Integer.valueOf(childCates.get(i).getId())-1;
+                    if(index == position)
+                    {
+                        select = i;
+                    }
+                }
+                updateParentCateType(position);
+                cateChildLv.setSelection(select);
+
+            }
+        });
+
+        cateChildLv.setOnScrollListener(new AbsListView.OnScrollListener()
+        {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState)
+            {
+
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount)
+            {
+                CateInfo.DataBeanXX.GoodsBean cate = childCates.get(firstVisibleItem);
+                int groupId = Integer.valueOf(cate.getId())-1;
+                cateParentRv.smoothScrollToPosition(groupId);
+                updateParentCateType(groupId);
+            }
+        });
 
     }
 
@@ -107,5 +154,28 @@ public class CateFragment extends BaseFragment implements CateContract.View
         {
             mCatePresenter = presenter;
         }
+    }
+
+
+    private void updateParentCateType(int position)
+    {
+        for (int i = 0; i < parentCateList.size(); i++)
+        {
+            ParentCate parentCate = parentCateList.get(i);
+
+            if (position == i)
+            {
+                parentCate.setStatus(1);
+                parentCateList.remove(i);
+                parentCateList.add(i, parentCate);
+            }
+            else
+            {
+                parentCate.setStatus(0);
+                parentCateList.remove(i);
+                parentCateList.add(i, parentCate);
+            }
+        }
+        cateParentAdapter.setNewData(parentCateList);
     }
 }

@@ -24,4 +24,23 @@ public class ParentCate
     {
         return parentCateName;
     }
+
+    public void setStatus(int status)
+    {
+        this.status = status;
+    }
+
+    public void setParentCateName(String parentCateName)
+    {
+        this.parentCateName = parentCateName;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "ParentCate{" +
+                "status=" + status +
+                ", parentCateName='" + parentCateName + '\'' +
+                '}';
+    }
 }
