@@ -42,7 +42,7 @@ public class MyApplication extends Application
         Picasso picasso = new Picasso.Builder(this)
                 .defaultBitmapConfig(Bitmap.Config.RGB_565)
                 .downloader(new ImageDownLoader(client))
-                .indicatorsEnabled(true)
+                .indicatorsEnabled(false)
                 .build();
         Picasso.setSingletonInstance(picasso);
     }
